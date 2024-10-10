@@ -1,0 +1,88 @@
+@model Candidate
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <!-- Başlık ve alt başlık için modern tasarım -->
+        <h1 class="display-6 fw-bold text-primary">Apply for a Course</h1>
+        <p class="lead text-muted">Join one of our technology courses and start your learning journey!</p>
+    </div>
+
+    <form method="post" asp-action="Apply">
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <!-- Email girişi -->
+        <div class="form-floating mb-3">
+            <input asp-for="Email" class="form-control" placeholder="Email">
+            <label asp-for="Email">Email</label>
+        </div>
+
+        <!-- İsim girişi -->
+        <div class="form-floating mb-3">
+            <input asp-for="Firstname" class="form-control" placeholder="First Name">
+            <label asp-for="Firstname">First Name</label>
+        </div>
+
+        <!-- Soyisim girişi -->
+        <div class="form-floating mb-3">
+            <input asp-for="Lastname" class="form-control" placeholder="Last Name">
+            <label asp-for="Lastname">Last Name</label>
+        </div>
+
+        <!-- Yaş seçimi -->
+        <div class="mb-4">
+            <label asp-for="Age" class="form-label">Select Your Age</label>
+            <select asp-for="Age" class="form-select">
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+            </select>
+        </div>
+
+        <!-- Kurs seçimi -->
+        <fieldset class="mb-4">
+            <legend class="h5">Select a Course</legend>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="SelectedCourse" id="mvc" value="ASP.NET core MVC" checked>
+                <label class="form-check-label" for="mvc">ASP.Net Core MVC</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="SelectedCourse" id="api" value="ASP.NET core API">
+                <label class="form-check-label" for="api">ASP.Net Core API</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="SelectedCourse" id="blazor" value="Blazor">
+                <label class="form-check-label" for="blazor">Blazor</label>
+            </div>
+        </fieldset>
+
+        <!-- Gönder ve Ana Sayfa butonları -->
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary btn-lg px-5">Apply</button>
+            <a class="btn btn-warning btn-lg px-4" asp-controller="Home" asp-action="Index">Home</a>
+        </div>
+    </form>
+</div>
+
+<!-- Ek stil -->
+<style>
+    body {
+        background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .form-floating label {
+        padding: 0.75rem 1rem;
+    }
+
+    .btn {
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover, .btn-warning:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>

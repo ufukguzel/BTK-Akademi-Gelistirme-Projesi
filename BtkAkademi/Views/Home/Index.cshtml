@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container text-center mt-5">
+    <!-- Başlık için göze çarpan modern stil -->
+    <h1 class="display-3 fw-bold text-primary mb-4">BTK AKADEMİ</h1>
+
+    <!-- Alt başlık açıklaması -->
+    <p class="lead text-muted mb-4">Türkiye'nin önde gelen teknoloji eğitim platformu</p>
+
+    <!-- Başvuru butonu -->
+    <p>
+        <a class="btn btn-lg btn-outline-primary shadow-sm px-5 py-3 rounded-pill" 
+           asp-controller="Course" asp-action="Apply">
+            Başvurunu Yap
+        </a>
+    </p>
+</div>
+
+<!-- Arka planı daha çekici hale getirmek için düz renk veya desen eklemek için CSS -->
+<style>
+    body {
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .btn-outline-primary {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #0d6efd;
+        color: white;
+    }
+</style>
